@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>ArticuloAll</servlet-name>
+        <servlet-class>ar.com.webapi.java.web.services.ArticuloAll</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ArticuloAlta</servlet-name>
+        <servlet-class>ar.com.webapi.java.web.services.ArticuloAlta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ArticuloLikeDescripcion</servlet-name>
+        <servlet-class>ar.com.webapi.java.web.services.ArticuloLikeDescripcion</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ArticuloAll</servlet-name>
+        <url-pattern>/ArticuloAll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArticuloAlta</servlet-name>
+        <url-pattern>/ArticuloAlta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArticuloLikeDescripcion</servlet-name>
+        <url-pattern>/ArticuloLikeDescripcion</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            9
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.html</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/errorParams.html</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/errorParams.html</location>
+    </error-page>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>bluesky</param-value>
+    </context-param>
+</web-app>
