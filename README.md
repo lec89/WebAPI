@@ -1,3 +1,3 @@
 # WebAPI
 
-Proyect made with Java WebAPI and Primefaces.
+Proyect made with Java WebAPI and Primefaces, using Maven.
